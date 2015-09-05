@@ -1,6 +1,10 @@
 -module(reconnaissance_example_callback).
 
--compile(export_all).
+-export([
+    request/0,
+    response/3,
+    handle_response/3
+]).
 
 % Creates the payload that is sent as multicast packet
 request() ->
@@ -8,7 +12,7 @@ request() ->
 
 % Request is the payload from the request() function above
 % The output is the response payload
-response(_IP, _Port, Request) ->
+response(_IP, _Port, _Request) ->
     list_to_binary(atom_to_list(node())).
 
 % Called when the response from discoverd nodes is received
