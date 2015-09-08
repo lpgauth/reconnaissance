@@ -9,7 +9,8 @@
                  ]},
   {mod, { reconnaissance_app, []}},
   {env, [
-        {port, 31337},
-        {callback_module, reconnaissance_example_callback}
+        {callback_module, ms_base_reconnaissance},
+        {heartbeat_frequency, 0},
+        {port, 31337}
     ]}
  ]}.
